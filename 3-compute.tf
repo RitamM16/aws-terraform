@@ -23,7 +23,7 @@ resource "aws_placement_group" "spread_placement" {
 resource "aws_launch_template" "web_app" {
   name          = "web-app-template"
   image_id      = data.aws_ami.ubuntu.image_id
-  instance_type = "t3a.micro"
+  instance_type = var.ec2-instance-type
 
   vpc_security_group_ids = [
     aws_security_group.server_sg.id
